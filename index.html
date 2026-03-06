@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SAPS CALENDAR</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the whole gallery on screen */
+        }
+
+        h1 {
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        .wall {
+            display: grid;
+            /* This creates a flexible grid where items are at least 300px 
+               but can grow to fill space. It will automatically wrap 
+               to the next row in order. */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            width: 95%;
+            max-width: 2000px; /* Limits how wide the whole gallery gets */
+        }
+
+        .flyer {
+            display: flex;
+            flex-direction: column;
+            background: #111;
+            border: 1px solid #444;
+            /* This is the magic line for your 950px requirement */
+            max-width: 950px; 
+            margin: 0 auto; /* Centers the flyer within its grid cell */
+            width: 100%;
+        }
+
+        .flyer img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .caption {
+            font-size: 16px;
+            text-align: center;
+            padding: 15px;
+            background: #000;
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .flyer:hover {
+            border-color: #fff;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seattle Area Punk Show Calendar</h1>
+
+    <div class="wall">
+
+        <div class="flyer">
+            <img src="images/03.06.26   .jpg" loading="lazy">
+            <div class="caption">03.06.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.06.26 .jpg" loading="lazy">
+            <div class="caption">03.06.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.06.26 No Signs of Serenity, Arrythmia, Violent Insurrection, Eves Black Heart, Maggot Sorcerer.jpg" loading="lazy">
+            <div class="caption">03.06.26 No Signs of Serenity, Arrythmia, Violent Insurrection, Eves Black Heart, Maggot Sorcerer</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.06.26.jpg" loading="lazy">
+            <div class="caption">03.06.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.07.26     .jpg" loading="lazy">
+            <div class="caption">03.07.26     </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.07.26   .jpg" loading="lazy">
+            <div class="caption">03.07.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.07.26  .jpg" loading="lazy">
+            <div class="caption">03.07.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.07.26 .jpg" loading="lazy">
+            <div class="caption">03.07.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.07.26 Posthumous Regurgitation, Paralisys Expletivr, Resin Cough.jpg" loading="lazy">
+            <div class="caption">03.07.26 Posthumous Regurgitation, Paralisys Expletivr, Resin Cough</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.07.26.jpg" loading="lazy">
+            <div class="caption">03.07.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.08.26   .jpg" loading="lazy">
+            <div class="caption">03.08.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.08.26  .jpg" loading="lazy">
+            <div class="caption">03.08.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.08.26.jpg" loading="lazy">
+            <div class="caption">03.08.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.10.26  .jpg" loading="lazy">
+            <div class="caption">03.10.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.11.26 .jpg" loading="lazy">
+            <div class="caption">03.11.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.12.26  .jpg" loading="lazy">
+            <div class="caption">03.12.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.12.26 Massgrief, POISE, Fashion Change, Total Power Exchange.jpg" loading="lazy">
+            <div class="caption">03.12.26 Massgrief, POISE, Fashion Change, Total Power Exchange</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.12.26.jpg" loading="lazy">
+            <div class="caption">03.12.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.13.26 Auntie Death, The Passion Racket, Crooked Notes.jpg" loading="lazy">
+            <div class="caption">03.13.26 Auntie Death, The Passion Racket, Crooked Notes</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.13.26.jpg" loading="lazy">
+            <div class="caption">03.13.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.14.26.jpg" loading="lazy">
+            <div class="caption">03.14.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.15.26  .jpg" loading="lazy">
+            <div class="caption">03.15.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.15.26.jpg" loading="lazy">
+            <div class="caption">03.15.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.17.26.jpg" loading="lazy">
+            <div class="caption">03.17.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.18.26  .jpg" loading="lazy">
+            <div class="caption">03.18.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.19.26 .jpg" loading="lazy">
+            <div class="caption">03.19.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.19.26 Green Jelly, Headless Pez, Big Time, Metaphoria, Nivek.jpg" loading="lazy">
+            <div class="caption">03.19.26 Green Jelly, Headless Pez, Big Time, Metaphoria, Nivek</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.20.26 at El Corazon.jpg" loading="lazy">
+            <div class="caption">03.20.26 at El Corazon</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.21.26 .jpg" loading="lazy">
+            <div class="caption">03.21.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.21.26 We Might Die, Kapslok, The Disorderlies.jpg" loading="lazy">
+            <div class="caption">03.21.26 We Might Die, Kapslok, The Disorderlies</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.25.26 .jpg" loading="lazy">
+            <div class="caption">03.25.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.27.26 .jpg" loading="lazy">
+            <div class="caption">03.27.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.27.26 The Slurps, Crypt Creature, Dr Sanders.jpg" loading="lazy">
+            <div class="caption">03.27.26 The Slurps, Crypt Creature, Dr Sanders</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.28.26 Arrhythmia, Moldavite, Die Blasting, Pessim.jpg" loading="lazy">
+            <div class="caption">03.28.26 Arrhythmia, Moldavite, Die Blasting, Pessim</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.29.26 Nim Vind, Evelyn's Casket, Me Grimlock, Life Rips.jpg" loading="lazy">
+            <div class="caption">03.29.26 Nim Vind, Evelyn's Casket, Me Grimlock, Life Rips</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/03.30.26  .jpg" loading="lazy">
+            <div class="caption">03.30.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.01.26 60yo Punk,, HYPNO TECHS, REAPER PUNX.jpg" loading="lazy">
+            <div class="caption">04.01.26 60yo Punk,, HYPNO TECHS, REAPER PUNX</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.02.26.jpg" loading="lazy">
+            <div class="caption">04.02.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.03.26   .jpg" loading="lazy">
+            <div class="caption">04.03.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.03.26  .jpg" loading="lazy">
+            <div class="caption">04.03.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.03.26 .jpg" loading="lazy">
+            <div class="caption">04.03.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.03.26.jpg" loading="lazy">
+            <div class="caption">04.03.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.04.26     .jpg" loading="lazy">
+            <div class="caption">04.04.26     </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.04.26   .jpg" loading="lazy">
+            <div class="caption">04.04.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.04.26 Abyecta, Massgrief, Nightfeeder, Fan Club.jpg" loading="lazy">
+            <div class="caption">04.04.26 Abyecta, Massgrief, Nightfeeder, Fan Club</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.08.26  .jpg" loading="lazy">
+            <div class="caption">04.08.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.09.26.jpg" loading="lazy">
+            <div class="caption">04.09.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.10.26 Prisoner (Blackened Crust Industrial Death Metal from VA), Exogorth, Ectopic Pregnancy, Midwestlust .jpg" loading="lazy">
+            <div class="caption">04.10.26 Prisoner (Blackened Crust Industrial Death Metal from VA), Exogorth, Ectopic Pregnancy, Midwestlust </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.11.26 Neuropsychosis, Moldavite, Swamp Ass, Refractory Hemocerebrotomy.jpg" loading="lazy">
+            <div class="caption">04.11.26 Neuropsychosis, Moldavite, Swamp Ass, Refractory Hemocerebrotomy</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.12.26   .jpg" loading="lazy">
+            <div class="caption">04.12.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.12.26 Mr. Dinkles, Sneer, Toxic Tears, Fatal Femmes  .jpg" loading="lazy">
+            <div class="caption">04.12.26 Mr. Dinkles, Sneer, Toxic Tears, Fatal Femmes  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.15.26 Toki - The Japanese Elvis.jpg" loading="lazy">
+            <div class="caption">04.15.26 Toki - The Japanese Elvis</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.16.26   .jpg" loading="lazy">
+            <div class="caption">04.16.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.16.26.jpg" loading="lazy">
+            <div class="caption">04.16.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.18.26 Tsunami Bomb!, Crimewave 66 (feat. members of RANCID & OPIVY), Berzerk, The Scoffs, Fleamale.jpg" loading="lazy">
+            <div class="caption">04.18.26 Tsunami Bomb!, Crimewave 66 (feat. members of RANCID & OPIVY), Berzerk, The Scoffs, Fleamale</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.19.26   .jpg" loading="lazy">
+            <div class="caption">04.19.26   </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/04.26.26  .jpg" loading="lazy">
+            <div class="caption">04.26.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.01.26 .jpg" loading="lazy">
+            <div class="caption">05.01.26 </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.02.26  .jpg" loading="lazy">
+            <div class="caption">05.02.26  </div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.02.26.jpg" loading="lazy">
+            <div class="caption">05.02.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.11.26 Group Think, Quitter, Disease, Dismembered.jpg" loading="lazy">
+            <div class="caption">05.11.26 Group Think, Quitter, Disease, Dismembered</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.22.26.jpg" loading="lazy">
+            <div class="caption">05.22.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.24.26 Robo Pumpkin, Campbell Ghost, Worst Party Ever, Melancholy Club.jpg" loading="lazy">
+            <div class="caption">05.24.26 Robo Pumpkin, Campbell Ghost, Worst Party Ever, Melancholy Club</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/05.24.26.jpg" loading="lazy">
+            <div class="caption">05.24.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/06.25.26.jpg" loading="lazy">
+            <div class="caption">06.25.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/06.27.26.jpg" loading="lazy">
+            <div class="caption">06.27.26</div>
+        </div>
+    
+        <div class="flyer">
+            <img src="images/07.11.26 Berzerk, Middle Aged Queers, Dead Bars.jpg" loading="lazy">
+            <div class="caption">07.11.26 Berzerk, Middle Aged Queers, Dead Bars</div>
+        </div>
+    
+    </div>
+</body>
+</html>
