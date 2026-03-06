@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+ xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+<title>Seattle Area Punk Show</title>
+<link>https://seattleareapunkshows.github.io/sapsarchive/</link>
+<description>Seattle Area Punk Shows</description>
+<language>en-us</language>
+
+<atom:link href="https://seattleareapunkshows.github.io/sapsarchive/feed.xml"
+ rel="self"
+ type="application/rss+xml" />
+
+<lastBuildDate>Fri, 06 Mar 2026 00:00:00 GMT</lastBuildDate>
+
+<item>
+<title>Latest Updates</title>
+<link>https://seattleareapunkshows.github.io/sapsarchive/</link>
+<guid>https://seattleareapunkshows.github.io/sapsarchive/</guid>
+<description>
+New flyers and shows are added daily.
+Visit the archive to find the next Punk gig in Seattle!
+</description>
+</item>
+
+</channel>
+</rss>
