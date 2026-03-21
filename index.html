@@ -127,13 +127,14 @@ box-shadow:0 0 30px black;
 </div>
 
 
-<div class="donate" style="margin-top:20px; text-align:center; font-size:30px;">
-<a href="https://www.paypal.me/electricblizzard" style="color:#00ff04; text-decoration:Bold;">Donate</a>
-</div>
+<iframe 
+  src="calendar.html" 
+  style="width:100%; height:800px; border:none;">
+</iframe>
 
 
 <div class="counter" id="counter">
- 123 upcoming events listed.
+ 126 upcoming events listed.
 </div>
 
 <div class="controls">
@@ -162,21 +163,6 @@ box-shadow:0 0 30px black;
 
 <div class="wall" id="flyerWall">
 
-
-<div class="flyer" data-month="3">
-<img src="images/03.19.26  kk.jpg" loading="lazy" onclick="openViewer('images/03.19.26  kk.jpg')">
-<div class="caption">March 19th, 2026</div>
-</div>
-
-<div class="flyer" data-month="3">
-<img src="images/03.19.26 .jpg" loading="lazy" onclick="openViewer('images/03.19.26 .jpg')">
-<div class="caption">March 19th, 2026</div>
-</div>
-
-<div class="flyer" data-month="3">
-<img src="images/03.19.26 Green Jelly, Headless Pez, Big Time, Metaphoria, Nivek.jpg" loading="lazy" onclick="openViewer('images/03.19.26 Green Jelly, Headless Pez, Big Time, Metaphoria, Nivek.jpg')">
-<div class="caption">March 19th, 2026</div>
-</div>
 
 <div class="flyer" data-month="3">
 <img src="images/03.20.26         .jpg" loading="lazy" onclick="openViewer('images/03.20.26         .jpg')">
@@ -215,6 +201,11 @@ box-shadow:0 0 30px black;
 
 <div class="flyer" data-month="3">
 <img src="images/03.20.26 reaper.jpg" loading="lazy" onclick="openViewer('images/03.20.26 reaper.jpg')">
+<div class="caption">March 20th, 2026</div>
+</div>
+
+<div class="flyer" data-month="3">
+<img src="images/03.20.26 voyeur.jpg" loading="lazy" onclick="openViewer('images/03.20.26 voyeur.jpg')">
 <div class="caption">March 20th, 2026</div>
 </div>
 
@@ -289,7 +280,7 @@ box-shadow:0 0 30px black;
 </div>
 
 <div class="flyer" data-month="3">
-<img src="images/03.26.26 sbd.jpg" loading="lazy" onclick="openViewer('images/03.26.26 sbd.jpg')">
+<img src="images/03.26.26 Grayce, The Day Before We Met, Sunbather Die.jpg" loading="lazy" onclick="openViewer('images/03.26.26 Grayce, The Day Before We Met, Sunbather Die.jpg')">
 <div class="caption">March 26th, 2026</div>
 </div>
 
@@ -484,6 +475,11 @@ box-shadow:0 0 30px black;
 </div>
 
 <div class="flyer" data-month="4">
+<img src="images/04.11.26 college radio.jpg" loading="lazy" onclick="openViewer('images/04.11.26 college radio.jpg')">
+<div class="caption">April 11th, 2026</div>
+</div>
+
+<div class="flyer" data-month="4">
 <img src="images/04.11.26 ptb.jpg" loading="lazy" onclick="openViewer('images/04.11.26 ptb.jpg')">
 <div class="caption">April 11th, 2026</div>
 </div>
@@ -534,12 +530,22 @@ box-shadow:0 0 30px black;
 </div>
 
 <div class="flyer" data-month="4">
+<img src="images/04.17.26.jpg" loading="lazy" onclick="openViewer('images/04.17.26.jpg')">
+<div class="caption">April 17th, 2026</div>
+</div>
+
+<div class="flyer" data-month="4">
 <img src="images/04.18.26            .jpg" loading="lazy" onclick="openViewer('images/04.18.26            .jpg')">
 <div class="caption">April 18th, 2026</div>
 </div>
 
 <div class="flyer" data-month="4">
 <img src="images/04.18.26          .jpg" loading="lazy" onclick="openViewer('images/04.18.26          .jpg')">
+<div class="caption">April 18th, 2026</div>
+</div>
+
+<div class="flyer" data-month="4">
+<img src="images/04.18.26 .jpg" loading="lazy" onclick="openViewer('images/04.18.26 .jpg')">
 <div class="caption">April 18th, 2026</div>
 </div>
 
@@ -610,6 +616,11 @@ box-shadow:0 0 30px black;
 
 <div class="flyer" data-month="4">
 <img src="images/04.30.26 Othiel.jpg" loading="lazy" onclick="openViewer('images/04.30.26 Othiel.jpg')">
+<div class="caption">April 30th, 2026</div>
+</div>
+
+<div class="flyer" data-month="4">
+<img src="images/04.30.26 at Chop Suey.jpg" loading="lazy" onclick="openViewer('images/04.30.26 at Chop Suey.jpg')">
 <div class="caption">April 30th, 2026</div>
 </div>
 
@@ -729,6 +740,11 @@ box-shadow:0 0 30px black;
 </div>
 
 <div class="flyer" data-month="6">
+<img src="images/06.17.26 Helen 55 (90s Metal Shoegaze), Torched, Koba.jpg" loading="lazy" onclick="openViewer('images/06.17.26 Helen 55 (90s Metal Shoegaze), Torched, Koba.jpg')">
+<div class="caption">June 17th, 2026</div>
+</div>
+
+<div class="flyer" data-month="6">
 <img src="images/06.17.26.jpg" loading="lazy" onclick="openViewer('images/06.17.26.jpg')">
 <div class="caption">June 17th, 2026</div>
 </div>
@@ -790,7 +806,7 @@ box-shadow:0 0 30px black;
 <script>
 
 const perPage = 30
-const totalEvents = 123
+const totalEvents = 126
 
 let flyers = Array.from(document.querySelectorAll(".flyer"))
 let filtered = flyers
@@ -873,6 +889,10 @@ updateCounter()
 render()
 
 </script>
+
+<div class="donate" style="margin-top:20px; text-align:center; font-size:30px;">
+<a href="https://www.paypal.me/electricblizzard" style="color:#00ff04; text-decoration:Bold;">Donate</a>
+</div>
 
 </body>
 </html>
