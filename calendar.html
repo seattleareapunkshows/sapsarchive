@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SEATTLE AREA PUNK SHOWS</title>
+
+<style>
+body {
+    background:#000;
+    color:#fff;
+    font-family:Segoe UI;
+    margin:0;
+}
+
+h1 {
+    text-align:center;
+    padding:20px;
+}
+
+#controls {
+    text-align:center;
+    margin-bottom:20px;
+}
+
+select {
+    padding:10px;
+    font-size:16px;
+    background:#111;
+    color:#fff;
+    border:1px solid #444;
+}
+
+.month {
+    max-width:600px;
+    margin:20px auto;
+    display:none;
+}
+
+.weekdays {
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+    color:#aaa;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:4px;
+}
+
+.day {
+    padding:6px;
+    min-height:70px;
+    cursor:pointer;
+    border:1px solid #333;
+    position:relative;
+    background:#111;
+}
+
+.day:hover {
+    background:#222;
+}
+
+/* GREEN = events */
+.has-events {
+    background:#003300;
+    border:1px solid #00ff04;
+}
+
+/* YELLOW = today */
+.today {
+    background:#333300;
+    border:2px solid #ffff00;
+}
+
+/* PAST no events = red X */
+.past-no-events {
+    background:#0a0a0a;
+}
+
+.future-no-events {
+    background:none;
+    border:1px solid #111;
+}
+
+.noEventsX {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:#ff2b2b;
+    font-size:18px;
+}
+
+.empty {
+    background:none;
+    border:none;
+}
+
+.date {
+    font-weight:bold;
+}
+
+.count {
+    font-size:12px;
+}
+
+.todayLabel {
+    font-size:10px;
+    color:#ffff00;
+}
+
+/* MODAL */
+#modal {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    display:none;
+}
+
+.carousel {
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+    padding:20px;
+}
+
+.slide img {
+    max-height:60vh;
+    max-width:70vw;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Seattle Area Punk Shows</h1>
+
+
+<div class="Home" style="margin-top:14px; text-align:center; font-size:20px;">
+<a href="https://www.seattleareapunkshows.org" style="color:#00ff04; text-decoration:Bold;">Switch to Main View</a>
+</div>
+
+<div class="Tickets" style="margin-top:14px; text-align:center; font-size:20px;">
+<a href="https://www.seattleareapunkshows.org/presales.html" style="color:#00ff04; text-decoration:Bold;">S.A.P.S. Pre-Sales</a>
+</div>
+
+<div id="controls">
+<select id="monthSelect" onchange="changeMonth()"><option value="month-2026-3">March 2026</option><option value="month-2026-4">April 2026</option><option value="month-2026-5">May 2026</option><option value="month-2026-6">June 2026</option><option value="month-2026-7">July 2026</option></select>
+</div>
+
+<div class="month" id="month-2026-3"><h2>March 2026</h2>
+    <div class="weekdays">
+        <div>S</div><div>M</div><div>T</div><div>W</div>
+        <div>Th</div><div>F</div><div>Sa</div>
+    </div>
+    <div class="grid"><div class="day past-no-events" onclick="openDay('2026-03-01')"><div class="date">1</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-02')"><div class="date">2</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-03')"><div class="date">3</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-04')"><div class="date">4</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-05')"><div class="date">5</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-06')"><div class="date">6</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-07')"><div class="date">7</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-08')"><div class="date">8</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-09')"><div class="date">9</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-10')"><div class="date">10</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-11')"><div class="date">11</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-12')"><div class="date">12</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-13')"><div class="date">13</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-14')"><div class="date">14</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-15')"><div class="date">15</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-16')"><div class="date">16</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-17')"><div class="date">17</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-18')"><div class="date">18</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-19')"><div class="date">19</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-20')"><div class="date">20</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-21')"><div class="date">21</div><div class="noEventsX">✕</div></div><div class="day past-no-events" onclick="openDay('2026-03-22')"><div class="date">22</div><div class="noEventsX">✕</div></div><div class="day today" onclick="openDay('2026-03-23')"><div class="date">23</div><div class="todayLabel">TODAY</div><div class="noEventsX">✕</div></div><div class="day future-no-events" onclick="openDay('2026-03-24')"><div class="date">24</div></div><div class="day has-events" onclick="openDay('2026-03-25')"><div class="date">25</div><div class="count">2</div></div><div class="day has-events" onclick="openDay('2026-03-26')"><div class="date">26</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-03-27')"><div class="date">27</div><div class="count">3</div></div><div class="day has-events" onclick="openDay('2026-03-28')"><div class="date">28</div><div class="count">4</div></div><div class="day has-events" onclick="openDay('2026-03-29')"><div class="date">29</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-03-30')"><div class="date">30</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-03-31')"><div class="date">31</div></div></div></div><div class="month" id="month-2026-4"><h2>April 2026</h2>
+    <div class="weekdays">
+        <div>S</div><div>M</div><div>T</div><div>W</div>
+        <div>Th</div><div>F</div><div>Sa</div>
+    </div>
+    <div class="grid"><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day has-events" onclick="openDay('2026-04-01')"><div class="date">1</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-04-02')"><div class="date">2</div><div class="count">2</div></div><div class="day has-events" onclick="openDay('2026-04-03')"><div class="date">3</div><div class="count">9</div></div><div class="day has-events" onclick="openDay('2026-04-04')"><div class="date">4</div><div class="count">9</div></div><div class="day has-events" onclick="openDay('2026-04-05')"><div class="date">5</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-04-06')"><div class="date">6</div></div><div class="day future-no-events" onclick="openDay('2026-04-07')"><div class="date">7</div></div><div class="day has-events" onclick="openDay('2026-04-08')"><div class="date">8</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-04-09')"><div class="date">9</div><div class="count">2</div></div><div class="day has-events" onclick="openDay('2026-04-10')"><div class="date">10</div><div class="count">3</div></div><div class="day has-events" onclick="openDay('2026-04-11')"><div class="date">11</div><div class="count">4</div></div><div class="day has-events" onclick="openDay('2026-04-12')"><div class="date">12</div><div class="count">2</div></div><div class="day future-no-events" onclick="openDay('2026-04-13')"><div class="date">13</div></div><div class="day has-events" onclick="openDay('2026-04-14')"><div class="date">14</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-04-15')"><div class="date">15</div><div class="count">2</div></div><div class="day has-events" onclick="openDay('2026-04-16')"><div class="date">16</div><div class="count">3</div></div><div class="day has-events" onclick="openDay('2026-04-17')"><div class="date">17</div><div class="count">2</div></div><div class="day has-events" onclick="openDay('2026-04-18')"><div class="date">18</div><div class="count">6</div></div><div class="day has-events" onclick="openDay('2026-04-19')"><div class="date">19</div><div class="count">3</div></div><div class="day future-no-events" onclick="openDay('2026-04-20')"><div class="date">20</div></div><div class="day has-events" onclick="openDay('2026-04-21')"><div class="date">21</div><div class="count">3</div></div><div class="day future-no-events" onclick="openDay('2026-04-22')"><div class="date">22</div></div><div class="day future-no-events" onclick="openDay('2026-04-23')"><div class="date">23</div></div><div class="day has-events" onclick="openDay('2026-04-24')"><div class="date">24</div><div class="count">4</div></div><div class="day has-events" onclick="openDay('2026-04-25')"><div class="date">25</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-04-26')"><div class="date">26</div><div class="count">2</div></div><div class="day future-no-events" onclick="openDay('2026-04-27')"><div class="date">27</div></div><div class="day future-no-events" onclick="openDay('2026-04-28')"><div class="date">28</div></div><div class="day future-no-events" onclick="openDay('2026-04-29')"><div class="date">29</div></div><div class="day has-events" onclick="openDay('2026-04-30')"><div class="date">30</div><div class="count">2</div></div></div></div><div class="month" id="month-2026-5"><h2>May 2026</h2>
+    <div class="weekdays">
+        <div>S</div><div>M</div><div>T</div><div>W</div>
+        <div>Th</div><div>F</div><div>Sa</div>
+    </div>
+    <div class="grid"><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day has-events" onclick="openDay('2026-05-01')"><div class="date">1</div><div class="count">3</div></div><div class="day has-events" onclick="openDay('2026-05-02')"><div class="date">2</div><div class="count">3</div></div><div class="day future-no-events" onclick="openDay('2026-05-03')"><div class="date">3</div></div><div class="day future-no-events" onclick="openDay('2026-05-04')"><div class="date">4</div></div><div class="day future-no-events" onclick="openDay('2026-05-05')"><div class="date">5</div></div><div class="day future-no-events" onclick="openDay('2026-05-06')"><div class="date">6</div></div><div class="day has-events" onclick="openDay('2026-05-07')"><div class="date">7</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-05-08')"><div class="date">8</div><div class="count">2</div></div><div class="day has-events" onclick="openDay('2026-05-09')"><div class="date">9</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-05-10')"><div class="date">10</div></div><div class="day has-events" onclick="openDay('2026-05-11')"><div class="date">11</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-05-12')"><div class="date">12</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-05-13')"><div class="date">13</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-05-14')"><div class="date">14</div></div><div class="day future-no-events" onclick="openDay('2026-05-15')"><div class="date">15</div></div><div class="day has-events" onclick="openDay('2026-05-16')"><div class="date">16</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-05-17')"><div class="date">17</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-05-18')"><div class="date">18</div></div><div class="day future-no-events" onclick="openDay('2026-05-19')"><div class="date">19</div></div><div class="day future-no-events" onclick="openDay('2026-05-20')"><div class="date">20</div></div><div class="day has-events" onclick="openDay('2026-05-21')"><div class="date">21</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-05-22')"><div class="date">22</div><div class="count">3</div></div><div class="day future-no-events" onclick="openDay('2026-05-23')"><div class="date">23</div></div><div class="day has-events" onclick="openDay('2026-05-24')"><div class="date">24</div><div class="count">2</div></div><div class="day future-no-events" onclick="openDay('2026-05-25')"><div class="date">25</div></div><div class="day future-no-events" onclick="openDay('2026-05-26')"><div class="date">26</div></div><div class="day future-no-events" onclick="openDay('2026-05-27')"><div class="date">27</div></div><div class="day future-no-events" onclick="openDay('2026-05-28')"><div class="date">28</div></div><div class="day future-no-events" onclick="openDay('2026-05-29')"><div class="date">29</div></div><div class="day future-no-events" onclick="openDay('2026-05-30')"><div class="date">30</div></div><div class="day future-no-events" onclick="openDay('2026-05-31')"><div class="date">31</div></div></div></div><div class="month" id="month-2026-6"><h2>June 2026</h2>
+    <div class="weekdays">
+        <div>S</div><div>M</div><div>T</div><div>W</div>
+        <div>Th</div><div>F</div><div>Sa</div>
+    </div>
+    <div class="grid"><div class="day empty"></div><div class="day future-no-events" onclick="openDay('2026-06-01')"><div class="date">1</div></div><div class="day has-events" onclick="openDay('2026-06-02')"><div class="date">2</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-06-03')"><div class="date">3</div></div><div class="day future-no-events" onclick="openDay('2026-06-04')"><div class="date">4</div></div><div class="day future-no-events" onclick="openDay('2026-06-05')"><div class="date">5</div></div><div class="day future-no-events" onclick="openDay('2026-06-06')"><div class="date">6</div></div><div class="day future-no-events" onclick="openDay('2026-06-07')"><div class="date">7</div></div><div class="day future-no-events" onclick="openDay('2026-06-08')"><div class="date">8</div></div><div class="day future-no-events" onclick="openDay('2026-06-09')"><div class="date">9</div></div><div class="day has-events" onclick="openDay('2026-06-10')"><div class="date">10</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-06-11')"><div class="date">11</div></div><div class="day future-no-events" onclick="openDay('2026-06-12')"><div class="date">12</div></div><div class="day has-events" onclick="openDay('2026-06-13')"><div class="date">13</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-06-14')"><div class="date">14</div></div><div class="day future-no-events" onclick="openDay('2026-06-15')"><div class="date">15</div></div><div class="day future-no-events" onclick="openDay('2026-06-16')"><div class="date">16</div></div><div class="day has-events" onclick="openDay('2026-06-17')"><div class="date">17</div><div class="count">2</div></div><div class="day future-no-events" onclick="openDay('2026-06-18')"><div class="date">18</div></div><div class="day has-events" onclick="openDay('2026-06-19')"><div class="date">19</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-06-20')"><div class="date">20</div></div><div class="day future-no-events" onclick="openDay('2026-06-21')"><div class="date">21</div></div><div class="day future-no-events" onclick="openDay('2026-06-22')"><div class="date">22</div></div><div class="day future-no-events" onclick="openDay('2026-06-23')"><div class="date">23</div></div><div class="day future-no-events" onclick="openDay('2026-06-24')"><div class="date">24</div></div><div class="day future-no-events" onclick="openDay('2026-06-25')"><div class="date">25</div></div><div class="day future-no-events" onclick="openDay('2026-06-26')"><div class="date">26</div></div><div class="day has-events" onclick="openDay('2026-06-27')"><div class="date">27</div><div class="count">2</div></div><div class="day future-no-events" onclick="openDay('2026-06-28')"><div class="date">28</div></div><div class="day future-no-events" onclick="openDay('2026-06-29')"><div class="date">29</div></div><div class="day future-no-events" onclick="openDay('2026-06-30')"><div class="date">30</div></div></div></div><div class="month" id="month-2026-7"><h2>July 2026</h2>
+    <div class="weekdays">
+        <div>S</div><div>M</div><div>T</div><div>W</div>
+        <div>Th</div><div>F</div><div>Sa</div>
+    </div>
+    <div class="grid"><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day future-no-events" onclick="openDay('2026-07-01')"><div class="date">1</div></div><div class="day future-no-events" onclick="openDay('2026-07-02')"><div class="date">2</div></div><div class="day future-no-events" onclick="openDay('2026-07-03')"><div class="date">3</div></div><div class="day future-no-events" onclick="openDay('2026-07-04')"><div class="date">4</div></div><div class="day future-no-events" onclick="openDay('2026-07-05')"><div class="date">5</div></div><div class="day future-no-events" onclick="openDay('2026-07-06')"><div class="date">6</div></div><div class="day future-no-events" onclick="openDay('2026-07-07')"><div class="date">7</div></div><div class="day future-no-events" onclick="openDay('2026-07-08')"><div class="date">8</div></div><div class="day future-no-events" onclick="openDay('2026-07-09')"><div class="date">9</div></div><div class="day has-events" onclick="openDay('2026-07-10')"><div class="date">10</div><div class="count">1</div></div><div class="day has-events" onclick="openDay('2026-07-11')"><div class="date">11</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-07-12')"><div class="date">12</div></div><div class="day future-no-events" onclick="openDay('2026-07-13')"><div class="date">13</div></div><div class="day future-no-events" onclick="openDay('2026-07-14')"><div class="date">14</div></div><div class="day future-no-events" onclick="openDay('2026-07-15')"><div class="date">15</div></div><div class="day future-no-events" onclick="openDay('2026-07-16')"><div class="date">16</div></div><div class="day future-no-events" onclick="openDay('2026-07-17')"><div class="date">17</div></div><div class="day has-events" onclick="openDay('2026-07-18')"><div class="date">18</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-07-19')"><div class="date">19</div></div><div class="day future-no-events" onclick="openDay('2026-07-20')"><div class="date">20</div></div><div class="day future-no-events" onclick="openDay('2026-07-21')"><div class="date">21</div></div><div class="day future-no-events" onclick="openDay('2026-07-22')"><div class="date">22</div></div><div class="day future-no-events" onclick="openDay('2026-07-23')"><div class="date">23</div></div><div class="day future-no-events" onclick="openDay('2026-07-24')"><div class="date">24</div></div><div class="day future-no-events" onclick="openDay('2026-07-25')"><div class="date">25</div></div><div class="day future-no-events" onclick="openDay('2026-07-26')"><div class="date">26</div></div><div class="day future-no-events" onclick="openDay('2026-07-27')"><div class="date">27</div></div><div class="day has-events" onclick="openDay('2026-07-28')"><div class="date">28</div><div class="count">1</div></div><div class="day future-no-events" onclick="openDay('2026-07-29')"><div class="date">29</div></div><div class="day future-no-events" onclick="openDay('2026-07-30')"><div class="date">30</div></div><div class="day has-events" onclick="openDay('2026-07-31')"><div class="date">31</div><div class="count">1</div></div></div></div>
+
+<div id="modal" onclick="closeModal(event)">
+    <div class="carousel" id="carousel"></div>
+</div>
+
+<script>
+
+const EVENTS = {
+"2026-03-25":[{img:"images/03.25.26 .jpg",bands:""},{img:"images/03.25.26 sb.jpg",bands:"sb"}],
+"2026-03-26":[{img:"images/03.26.26 Grayce, The Day Before We Met, Sunbather Die.jpg",bands:"Grayce, The Day Before We Met, Sunbather Die"}],
+"2026-03-27":[{img:"images/03.27.26                  .jpg",bands:""},{img:"images/03.27.26 The Slurps, Crypt Creature, Dr Sanders.jpg",bands:"The Slurps, Crypt Creature, Dr Sanders"},{img:"images/03.27.26 prp.jpg",bands:"prp"}],
+"2026-03-28":[{img:"images/03.28.26            .jpg",bands:""},{img:"images/03.28.26     .jpg",bands:""},{img:"images/03.28.26 Arrhythmia, Moldavite, Die Blasting, Pessim.jpg",bands:"Arrhythmia, Moldavite, Die Blasting, Pessim"},{img:"images/03.28.26 ww.jpg",bands:"ww"}],
+"2026-03-29":[{img:"images/03.29.26 Nim Vind, Evelyn's Casket, Me Grimlock, Life Rips.jpg",bands:"Nim Vind, Evelyn's Casket, Me Grimlock, Life Rips"}],
+"2026-03-30":[{img:"images/03.30.26  .jpg",bands:""}],
+"2026-04-01":[{img:"images/04.01.26 60yo Punk,, HYPNO TECHS, REAPER PUNX.jpg",bands:"60yo Punk,, HYPNO TECHS, REAPER PUNX"}],
+"2026-04-02":[{img:"images/04.02.26               .jpg",bands:""},{img:"images/04.02.26.jpg",bands:""}],
+"2026-04-03":[{img:"images/04.03.26      .jpg",bands:""},{img:"images/04.03.26   .jpg",bands:""},{img:"images/04.03.26  .jpg",bands:""},{img:"images/04.03.26 .jpg",bands:""},{img:"images/04.03.26 Laste Respite, Devils Advocate, Solarspeaker, Knuckle Sandwich.jpg",bands:"Laste Respite, Devils Advocate, Solarspeaker, Knuckle Sandwich"},{img:"images/04.03.26 QFC.jpg",bands:"QFC"},{img:"images/04.03.26 rty.jpg",bands:"rty"},{img:"images/04.03.26.        .jpg",bands:""},{img:"images/04.03.26.jpg",bands:""}],
+"2026-04-04":[{img:"images/04.04.26               .jpg",bands:""},{img:"images/04.04.26             .jpg",bands:""},{img:"images/04.04.26           .jpg",bands:""},{img:"images/04.04.26       .jpg",bands:""},{img:"images/04.04.26      .jpg",bands:""},{img:"images/04.04.26   .jpg",bands:""},{img:"images/04.04.26 Abyecta, Massgrief, Nightfeeder, Fan Club.jpg",bands:"Abyecta, Massgrief, Nightfeeder, Fan Club"},{img:"images/04.04.26 Trash Sound Conglomerate, Chance to Steal, Just Barely.jpg",bands:"Trash Sound Conglomerate, Chance to Steal, Just Barely"},{img:"images/04.04.26 at el corazon.jpg",bands:"at el corazon"}],
+"2026-04-05":[{img:"images/04.05.26.     .jpg",bands:""}],
+"2026-04-08":[{img:"images/04.08.26  .jpg",bands:""}],
+"2026-04-09":[{img:"images/04.09.26     .jpg",bands:""},{img:"images/04.09.26.jpg",bands:""}],
+"2026-04-10":[{img:"images/04.10.26                .jpg",bands:""},{img:"images/04.10.26 Prisoner (Blackened Crust Industrial Death Metal from VA), Exogorth, Ectopic Pregnancy, Midwestlust .jpg",bands:"Prisoner (Blackened Crust Industrial Death Metal from VA), Exogorth, Ectopic Pregnancy, Midwestlust"},{img:"images/04.10.26 tr.jpg",bands:"tr"}],
+"2026-04-11":[{img:"images/04.11.26 Neuropsychosis, Moldavite, Swamp Ass, Refractory Hemocerebrotomy.jpg",bands:"Neuropsychosis, Moldavite, Swamp Ass, Refractory Hemocerebrotomy"},{img:"images/04.11.26 Scoffs.jpg",bands:"Scoffs"},{img:"images/04.11.26 college radio.jpg",bands:"college radio"},{img:"images/04.11.26 ptb.jpg",bands:"ptb"}],
+"2026-04-12":[{img:"images/04.12.26   .jpg",bands:""},{img:"images/04.12.26 Mr. Dinkles, Sneer, Toxic Tears, Fatal Femmes  .jpg",bands:"Mr. Dinkles, Sneer, Toxic Tears, Fatal Femmes"}],
+"2026-04-14":[{img:"images/04.14.26.  .jpg",bands:""}],
+"2026-04-15":[{img:"images/04.15.26   .jpg",bands:""},{img:"images/04.15.26 Toki - The Japanese Elvis.jpg",bands:"Toki - The Japanese Elvis"}],
+"2026-04-16":[{img:"images/04.16.26   .jpg",bands:""},{img:"images/04.16.26 lv.jpg",bands:"lv"},{img:"images/04.16.26.jpg",bands:""}],
+"2026-04-17":[{img:"images/04.17.26 d.jpg",bands:"d"},{img:"images/04.17.26.jpg",bands:""}],
+"2026-04-18":[{img:"images/04.18.26            .jpg",bands:""},{img:"images/04.18.26          .jpg",bands:""},{img:"images/04.18.26 .jpg",bands:""},{img:"images/04.18.26 Tsunami Bomb!, Crimewave 66 (feat. members of RANCID & OPIVY), Berzerk, The Scoffs, Fleamale.jpg",bands:"Tsunami Bomb!, Crimewave 66 (feat. members of RANCID & OPIVY), Berzerk, The Scoffs, Fleamale"},{img:"images/04.18.26 at the Kraken.jpg",bands:"at the Kraken"},{img:"images/04.18.26 cc.jpg",bands:"cc"}],
+"2026-04-19":[{img:"images/04.19.26           (1).jpg",bands:"(1)"},{img:"images/04.19.26          .jpg",bands:""},{img:"images/04.19.26   .jpg",bands:""}],
+"2026-04-21":[{img:"images/04.21.26      .jpg",bands:""},{img:"images/04.21.26 ds.jpg",bands:"ds"},{img:"images/04.21.26.   .jpg",bands:""}],
+"2026-04-24":[{img:"images/04.24.26              .jpg",bands:""},{img:"images/04.24.26 One Vote For Violence (CA), Pine Box, Infiniste Sleep .jpg",bands:"One Vote For Violence (CA), Pine Box, Infiniste Sleep"},{img:"images/04.24.26 kc.jpg",bands:"kc"},{img:"images/04.24.26 sf.jpg",bands:"sf"}],
+"2026-04-25":[{img:"images/04.25.26 at Slims.jpg",bands:"at Slims"}],
+"2026-04-26":[{img:"images/04.26.26  .jpg",bands:""},{img:"images/04.26.26 at the Valley.jpg",bands:"at the Valley"}],
+"2026-04-30":[{img:"images/04.30.26 Othiel.jpg",bands:"Othiel"},{img:"images/04.30.26 at Chop Suey.jpg",bands:"at Chop Suey"}],
+"2026-05-01":[{img:"images/05.01.26 .jpg",bands:""},{img:"images/05.01.26 at Rhythms Coffee.jpg",bands:"at Rhythms Coffee"},{img:"images/05.01.26.jpg",bands:""}],
+"2026-05-02":[{img:"images/05.02.26  .jpg",bands:""},{img:"images/05.02.26 FX.jpg",bands:"FX"},{img:"images/05.02.26.jpg",bands:""}],
+"2026-05-07":[{img:"images/05.07.26.jpg",bands:""}],
+"2026-05-08":[{img:"images/05.08.26 at Lucky Dime.jpg",bands:"at Lucky Dime"},{img:"images/05.08.26.jpg",bands:""}],
+"2026-05-09":[{img:"images/05.09.26      .jpg",bands:""}],
+"2026-05-11":[{img:"images/05.11.26 Group Think, Quitter, Disease, Dismembered.jpg",bands:"Group Think, Quitter, Disease, Dismembered"}],
+"2026-05-12":[{img:"images/05.12.26 Machine Country, Quitter, Ectopic Pregnancy, Midwestlust.jpg",bands:"Machine Country, Quitter, Ectopic Pregnancy, Midwestlust"}],
+"2026-05-13":[{img:"images/05.13.26. jpg.jpeg",bands:"jpg"}],
+"2026-05-16":[{img:"images/05.16.26     .jpg",bands:""}],
+"2026-05-17":[{img:"images/05.17.26       .jpg",bands:""}],
+"2026-05-21":[{img:"images/05.21.26 Corpse Gas. Pungence, Disease, Beautiful Light .jpg",bands:"Corpse Gas. Pungence, Disease, Beautiful Light"}],
+"2026-05-22":[{img:"images/05.22.26     .jpg",bands:""},{img:"images/05.22.26 HiFi Murder.jpg",bands:"HiFi Murder"},{img:"images/05.22.26.jpg",bands:""}],
+"2026-05-24":[{img:"images/05.24.26 Robo Pumpkin, Campbell Ghost, Worst Party Ever, Melancholy Club.jpg",bands:"Robo Pumpkin, Campbell Ghost, Worst Party Ever, Melancholy Club"},{img:"images/05.24.26.jpg",bands:""}],
+"2026-06-02":[{img:"images/06.02.26 Danbert (Chumbawumba), Steve Bostick (The Scoffs), Michelle Pannell (Hutchie), Total Fucking Bummer (Kids on Fire).jpg",bands:"Danbert (Chumbawumba), Steve Bostick (The Scoffs), Michelle Pannell (Hutchie), Total Fucking Bummer (Kids on Fire)"}],
+"2026-06-10":[{img:"images/06.10.26 hp    .jpg",bands:"hp"}],
+"2026-06-13":[{img:"images/06.13.26 poi.jpg",bands:"poi"}],
+"2026-06-17":[{img:"images/06.17.26 Helen 55 (90s Metal Shoegaze), Torched, Koba.jpg",bands:"Helen 55 (90s Metal Shoegaze), Torched, Koba"},{img:"images/06.17.26.jpg",bands:""}],
+"2026-06-19":[{img:"images/06.19.26   .jpg",bands:""}],
+"2026-06-27":[{img:"images/06.27.26 at the crypt.jpg",bands:"at the crypt"},{img:"images/06.27.26.jpg",bands:""}],
+"2026-07-10":[{img:"images/07.10.26 Harshfest.jpg",bands:"Harshfest"}],
+"2026-07-11":[{img:"images/07.11.26 Berzerk, Middle Aged Queers, Dead Bars.jpg",bands:"Berzerk, Middle Aged Queers, Dead Bars"}],
+"2026-07-18":[{img:"images/07.18.26 bs.jpg",bands:"bs"}],
+"2026-07-28":[{img:"images/07.28.26 d.jpg",bands:"d"}],
+"2026-07-31":[{img:"images/07.31.26.jpg",bands:""}],
+};
+
+function changeMonth(){
+    let val = document.getElementById("monthSelect").value
+    document.querySelectorAll(".month").forEach(m => m.style.display = "none")
+    document.getElementById(val).style.display = "block"
+}
+
+changeMonth()
+
+function openDay(date){
+    let modal = document.getElementById("modal")
+    let carousel = document.getElementById("carousel")
+
+    carousel.innerHTML = ""
+
+    if(EVENTS[date]){
+        EVENTS[date].forEach(item => {
+            carousel.innerHTML += `
+                <div class="slide">
+                    <img src="${item.img}">
+                </div>
+            `
+        })
+    }
+
+    modal.style.display = "block"
+}
+
+function closeModal(e){
+    if(e.target.id === "modal"){
+        document.getElementById("modal").style.display = "none"
+    }
+}
+
+</script>
+
+<div class="donate" style="margin-top:20px; text-align:center; font-size:20px;">
+<a href="https://www.paypal.me/electricblizzard" style="color:#00ff04; text-decoration:Bold;">Donate</a>
+</div>
+
+</body>
+</html>
