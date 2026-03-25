@@ -182,14 +182,17 @@ img {
 
 <body>
 
-<h1>Seattle Area Punk Shows</h1>
+<h1>Seattle Area Punk Shows </h1>
 
-<div class="Tickets" style="margin-top:14px; text-align:center; font-size:30px;">
-<a href="https://www.seattleareapunkshows.org/presales.html" style="color:#00ff04; text-decoration:Bold;">Pre-Sales</a>
-</div>
-<div class="counter" id="counter">
- 137 upcoming events listed.
-</div>
+
+
+
+
+
+
+
+
+
 <div class="controls">
 <select id="monthFilter">
 
@@ -210,11 +213,23 @@ img {
 </select>
 
 </div>
-<div class="Switch to Calendar View" style="margin-top:2px; text-align:center; font-size:20px;">
-<a href="https://www.seattleareapunkshows.org/calendar.html" style="color:#00ff04; text-decoration:Bold;">Switch to Calendar View</a>
+<div class="counter" id="counter">
+ 139 upcoming events listed.
 </div>
 
 <div class="nav" id="topNav"></div>
+
+<div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; font-size: 20px;">
+    <a href="https://www.seattleareapunkshows.org/presales.html" style="color:#00ff04; font-weight:bold; text-decoration:none;">Pre-Sales</a> // 
+    <a href="mailto:seattleareapunkshows@gmail.com"> Contact or Submit Flyer</a> // 
+    <a href="https://www.seattleareapunkshows.org/calendar.html" style="color:#00ff04; font-weight:bold; text-decoration:none;"> Switch to Calendar View </a>
+</div>
+
+<div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; font-size: 20px;">
+  Also Available On:  <a href="https://www.instagram.com/seattleareapunkshowsss" style="color:#00ff04; font-weight:bold; text-decoration:none;">Instagram</a>  //  
+    <a href="https://bsky.app/profile/sapspresents.bsky.social" style="color:#00ff04; font-weight:bold; text-decoration:none;"> Bluesky </a> // 
+    <a href="https://www.Tumblr.com/seattleareapunkshows" style="color:#00ff04; font-weight:bold; text-decoration:none;"> Tumblr </a>
+</div>
 
 <div class="wall" id="flyerWall">
 
@@ -820,6 +835,11 @@ img {
 </div>
 
 <div class="flyer" data-month="6">
+<img src="images/06.21.26  lvdt.jpg" loading="lazy" onclick="openViewer('images/06.21.26  lvdt.jpg')">
+<div class="caption">June 21st, 2026</div>
+</div>
+
+<div class="flyer" data-month="6">
 <img src="images/06.26.26 bremerton.jpg" loading="lazy" onclick="openViewer('images/06.26.26 bremerton.jpg')">
 <div class="caption">June 26th, 2026</div>
 </div>
@@ -904,6 +924,11 @@ img {
 <div class="caption">September 9th, 2026</div>
 </div>
 
+<div class="flyer" data-month="0">
+<img src="images/leopard.jpg" loading="lazy" onclick="openViewer('images/leopard.jpg')">
+<div class="caption">leopard</div>
+</div>
+
 
 </div>
 
@@ -916,7 +941,7 @@ img {
 <script>
 
 const perPage = 30
-const totalEvents = 137
+const totalEvents = 139
 
 let flyers = Array.from(document.querySelectorAll(".flyer"))
 let filtered = flyers
@@ -924,7 +949,7 @@ let currentPage = 1
 
 function updateCounter(){
 document.getElementById("counter").innerText =
-"There are " + filtered.length + " events in the archive"
+"There are " + filtered.length + " upcoming gigs."
 }
 
 function applyFilter(){
@@ -1000,14 +1025,8 @@ render()
 
 </script>
 
-<div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; font-size: 20px;">
-    <a href="https://www.instagram.com/seattleareapunkshowsss" style="color:#00ff04; font-weight:bold; text-decoration:none;">Instagram</a>
-    <a href="https://bsky.app/profile/sapspresents.bsky.social" style="color:#00ff04; font-weight:bold; text-decoration:none;">Bluesky</a>
-    <a href="https://www.Tumblr.com/seattleareapunkshows" style="color:#00ff04; font-weight:bold; text-decoration:none;">Tumblr</a>
-</div>
-
 <div class="Donate" style="margin-top:2px; text-align:center; font-size:20px;">
-<a href="https://www.paypal.me/electricblizzard" style="color:#00ff04; text-decoration:Bold;">Buy Me A Beer</a>
+Like the Site? <a href="https://www.paypal.me/electricblizzard" style="color:#00ff04; text-decoration:Bold;">Buy Me A Beer</a>
 </div>
 
 </body>
