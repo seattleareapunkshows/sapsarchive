@@ -116,68 +116,6 @@ box-shadow:0 0 30px black;
 
 </style>
 
-
-<style id="punk-style">
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap');
-
-body {
-    background-image: url('leopard.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; /* Scales to fill the screen */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Keeps image static while scrolling */
-    color: #ffffff;
-    font-family: 'Special Elite', 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-/* Overlay to break up pattern + improve readability */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(2px);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Make sure content sits above overlay */
-body > * {
-    position: relative;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.75);
-    margin: 20px;
-    padding: 15px;
-    border: 2px dashed #ff2e63;
-}
-
-/* Headings = bold punk flyer feel */
-h1, h2, h3 {
-    font-family: 'Bebas Neue', Impact, sans-serif;
-    letter-spacing: 2px;
-}
-
-/* Links */
-a {
-    color: #ff2e63;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #08f7fe;
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    filter: contrast(110%) brightness(105%);
-}
-</style>
-
 </head>
 
 <body>
@@ -214,7 +152,7 @@ img {
 
 </div>
 <div class="counter" id="counter">
- 127 upcoming events listed.
+ 124 upcoming events listed.
 </div>
 
 <div class="nav" id="topNav"></div>
@@ -233,21 +171,6 @@ img {
 
 <div class="wall" id="flyerWall">
 
-
-<div class="flyer" data-month="4">
-<img src="images/04.05.26 Abyecta in Olympia.jpg" loading="lazy" onclick="openViewer('images/04.05.26 Abyecta in Olympia.jpg')">
-<div class="caption">April 5th, 2026</div>
-</div>
-
-<div class="flyer" data-month="4">
-<img src="images/04.05.26 mwl.jpg" loading="lazy" onclick="openViewer('images/04.05.26 mwl.jpg')">
-<div class="caption">April 5th, 2026</div>
-</div>
-
-<div class="flyer" data-month="4">
-<img src="images/04.05.26.     .jpg" loading="lazy" onclick="openViewer('images/04.05.26.     .jpg')">
-<div class="caption">April 5th, 2026</div>
-</div>
 
 <div class="flyer" data-month="4">
 <img src="images/04.07.26 Gylt.jpg" loading="lazy" onclick="openViewer('images/04.07.26 Gylt.jpg')">
@@ -881,7 +804,7 @@ img {
 <script>
 
 const perPage = 30
-const totalEvents = 127
+const totalEvents = 124
 
 let flyers = Array.from(document.querySelectorAll(".flyer"))
 let filtered = flyers
