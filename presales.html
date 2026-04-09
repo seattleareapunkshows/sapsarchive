@@ -85,6 +85,26 @@ header{
 <body>
 <header>Seattle Area Punk Show Presales
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="Tickets" style="margin-top:14px; text-align:center; font-size:20px;">
 <a href="https://www.seattleareapunkshows.org" style="color:#00ff04; text-decoration:Bold;">Back to Home Page</a>
 </div>
@@ -184,6 +204,60 @@ header{
 </div>
 
 </div>
+
+
+
+
+
+
+<style id="punk-style">
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap');
+
+body {
+    background-image: url('leopard.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Scales to fill the screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps image static while scrolling */
+    color: #ffffff;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Overlay to break up pattern + improve readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Make sure content sits above overlay */
+body > * {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.75);
+    margin: 20px;
+    padding: 15px;
+    border: 2px dashed #ff2e63;
+}
+
+/* Headings = bold punk flyer feel */
+h1, h2, h3 {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
 </body>
 
 <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; font-size: 20px;">
